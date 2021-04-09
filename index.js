@@ -55,7 +55,7 @@ client.connect(err => {
 
     app.post('/addOrder', (req, res)=>{
         const order = req.body;
-        productCollection.insertMany(order)
+        ordersCollection.insertMany(order)
         .then(result =>{
             res.send(result.insertedCount > 0)
         })
